@@ -1,0 +1,77 @@
+ Financial Chatbot Prototype Documentation
+
+ Overview
+
+This chatbot prototype is a simplified AI assistant designed to answer basic financial queries based on previously analyzed data from the 10-K filings of  Microsoft, Tesla, and Apple  over the past three fiscal years. The chatbot operates using a simple  if-else logic  in Python, mapping user queries to predefined responses.
+
+---
+
+Predefined Queries It Can Answer
+
+1.  What is the total revenue? 
+2.  What is the Net Income? 
+3.  What is the sum of total assets? 
+4.  What is the sum of total liabilities? 
+5.  What is cash flow from operating activities? 
+6.  What is the revenue growth(%)? 
+7.  What is the net income growth(%)? 
+8.  What is the assets growth(%)? 
+9.  What is the liabilities growth(%)? 
+10.  What is the cash flow from operations growth(%)? 
+11.  What is the year by year average revenue growth rate(%)? 
+12.  What is the year by year average net income growth rate(%)? 
+13.  What is the year by year average assets growth rate(%)? 
+14.  What is the year by year average liabilities growth rate(%)? 
+15.  What is the year by year average cash flow from operations growth rate(%)? 
+
+---
+
+ How the Chatbot Works 
+
+* The chatbot receives the user query as a string.
+* It matches the query exactly against a set of  predefined strings  using `if-elif` logic.
+* If a match is found, it returns the corresponding  canned response  based on actual financial data or calculated metrics.
+* If there’s no match, the chatbot replies with:
+  `"Sorry, I can only provide information on predefined queries."`
+
+---
+
+### 💡  Example Code Logic 
+
+```python
+def simple_chatbot(user_query):
+    if user_query == "What is the total revenue?":
+        return "Total Revenue (3-year sum for all companies): $2.2 trillion"
+    elif user_query == "What is the Net Income?":
+        return "Combined Net Income: $659.01 billion"
+    # ... other predefined responses ...
+    else:
+        return "Sorry, I can only provide information on predefined queries."
+```
+
+---
+
+Data Sources 
+
+The chatbot's responses are based on financial figures extracted from the  10-K reports  of Microsoft, Tesla, and Apple from FY 2021 to FY 2024.
+
+---
+
+ Limitations 
+
+*  Fixed Queries Only:  It only understands and responds to  exactly predefined  questions.
+*  No NLP or AI Understanding:  The chatbot does not understand natural language variations (e.g., “Tell me the total revenue” won’t work).
+*  Static Data:  Responses are based on hardcoded or pre-calculated values, not real-time data.
+*  No Dynamic Interaction:  It cannot handle follow-ups or context-based queries.
+
+---
+
+ Next Steps (For Future Enhancement) 
+
+* Add fuzzy matching or NLP to understand varied phrasing.
+* Connect to a backend data source for dynamic answers.
+* Upgrade to a web interface using Flask or Streamlit.
+
+---
+
+
